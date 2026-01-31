@@ -1,26 +1,107 @@
-# .DESCRIPTION
-        Die Funktion Get-QRCode liest eine angegebene TXT-Datei ein und erstellt
-        für jede nicht-leere Zeile einen separaten QR-Code als PNG-Datei.
-        Die QR-Code-Dateien werden fortlaufend nummeriert im angegebenen Zielordner gespeichert.
-        Falls das benötigte PowerShell-Modul "QRCodeGenerator" nicht installiert ist,
-        wird es automatisch aus der PowerShell Gallery installiert und importiert.
+# 📦 PowerShell QR-Code Generator
 
-  # .PARAMETER Path
-      Gibt das Zielverzeichnis an, in dem die generierten QR-Code-PNG-Dateien
-      gespeichert werden. Existiert der Ordner nicht, wird er automatisch erstellt.
+![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Release](https://img.shields.io/badge/Release-1.0-blueviolet)
 
-  # .PARAMETER PayloadFile
-      Pfad zu einer Textdatei (TXT), deren Inhalt verarbeitet wird.
-      Jede nicht-leere Zeile der Datei wird als separater QR-Code codiert.
+**Get-QRCode** ist ein PowerShell-Skript, das automatisch QR-Codes aus einer Textdatei generiert. Jede Zeile der TXT-Datei wird in einen separaten QR-Code umgewandelt. Das benötigte Modul **QRCodeGenerator** wird bei Bedarf automatisch installiert.
 
-  # .EXAMPLE
-      Get-QRCode -Path "C:\Temp\QR" -PayloadFile "C:\Temp\payload.txt"
-      Erstellt QR-Codes für jede Zeile der Datei payload.txt und speichert
-      sie im Ordner C:\Temp\QR.
+---
 
-  # .EXAMPLE
-      Get-QRCode `
-          -Path "C:\QRcodes" `
-          -PayloadFile ".\data.txt"
+## 🚀 Features
 
-      Relativer Pfad zur Textdatei, Ausgabe im Verzeichnis C:\QRcodes.
+- QR-Codes aus jeder Textdatei generieren  
+- Automatische Modulinstallation (`QRCodeGenerator`)  
+- Zielordner wird automatisch erstellt  
+- Dateien werden fortlaufend nummeriert (`qrcode_1.png`, `qrcode_2.png`, …)  
+- Einfacher Funktionsaufruf – keine Adminrechte nötig  
+
+---
+
+## 📥 Installation
+
+1. **PowerShell 5.1 oder PowerShell 7+** installieren  
+2. Dieses Repository klonen oder Skript herunterladen:
+
+```powershell
+git clone https://github.com/DEIN_USERNAME/QRCodeGenerator.git
+cd QRCodeGenerator
+```
+
+> Hinweis: Bei der ersten Ausführung wird das Modul `QRCodeGenerator` automatisch installiert.
+
+---
+
+## ⚙️ Nutzung
+
+### Funktionsaufruf
+
+```powershell
+Get-QRCode -Path "C:\Temp\QR" -PayloadFile "C:\Temp\payload.txt"
+```
+
+**Parameter:**
+
+| Parameter     | Beschreibung |
+|---------------|--------------|
+| `-Path`       | Zielordner für die QR-Codes. Wird automatisch erstellt, falls er nicht existiert. |
+| `-PayloadFile`| Pfad zur Textdatei (.txt), jede Zeile wird als QR-Code generiert. |
+
+---
+
+### Beispiel
+
+**TXT-Datei (`payload.txt`):**
+
+```
+https://example.com
+Hallo Welt
+123-456-789
+```
+
+**PowerShell-Befehl:**
+
+```powershell
+Get-QRCode -Path "C:\QRcodes" -PayloadFile ".\payload.txt"
+```
+
+**Ergebnis:**
+
+- `C:\QRcodes\qrcode_1.png` → `https://example.com`  
+- `C:\QRcodes\qrcode_2.png` → `Hallo Welt`  
+- `C:\QRcodes\qrcode_3.png` → `123-456-789`  
+
+---
+
+## 🖼 Screenshot / Vorschau
+
+> Optional: Füge hier einen Screenshot ein, z.B. Vorschau eines erzeugten QR-Codes oder Ordners mit den PNG-Dateien.
+
+```markdown
+![QR-Code Vorschau](images/qr_preview.png)
+```
+
+*(Lege die Datei `qr_preview.png` im Ordner `images` ab)*
+
+---
+
+## 💡 Hinweise
+
+- Internetverbindung nötig, falls Modul noch nicht installiert ist  
+- Modul wird im Scope `CurrentUser` installiert  
+- Leere Zeilen in der TXT-Datei werden ignoriert  
+- Dateien werden fortlaufend nummeriert  
+
+---
+
+## 🛠 Weiterentwicklung
+
+- Pipeline-Support hinzufügen  
+- Dateiname aus Inhalt generieren  
+- Fortschrittsanzeige (`Write-Progress`)  
+- Logging und Verbose-Ausgaben  
+
+---
+
+## 📄 Lizenz
+
+MIT License – siehe `LICENSE` Datei
+
