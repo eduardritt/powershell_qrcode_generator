@@ -1,6 +1,6 @@
 # 📦 PowerShell QR-Code Generator
 
-![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Release](https://img.shields.io/badge/Release-1.0-blueviolet)
+![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue) ![License](https://img.shields.io/badge/License-GPL-green) ![Release](https://img.shields.io/badge/Release-1.0-blueviolet)
 
 **Get-QRCode** ist ein PowerShell-Skript, das automatisch QR-Codes aus einer Textdatei generiert. Jede Zeile der TXT-Datei wird in einen separaten QR-Code umgewandelt. Das benötigte Modul **QRCodeGenerator** wird bei Bedarf automatisch installiert.
 
