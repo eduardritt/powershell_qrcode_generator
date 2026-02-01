@@ -71,18 +71,6 @@ Get-QRCode -Path "C:\QRcodes" -PayloadFile ".\payload.txt"
 
 ---
 
-## 🖼 Screenshot / Vorschau
-
-> Optional: Füge hier einen Screenshot ein, z.B. Vorschau eines erzeugten QR-Codes oder Ordners mit den PNG-Dateien.
-
-```markdown
-![QR-Code Vorschau](images/qr_preview.png)
-```
-
-*(Lege die Datei `qr_preview.png` im Ordner `images` ab)*
-
----
-
 ## 💡 Hinweise
 
 - Internetverbindung nötig, falls Modul noch nicht installiert ist  
