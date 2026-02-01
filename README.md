@@ -6,16 +6,6 @@
 
 ---
 
-## 🚀 Features
-
-- QR-Codes aus jeder Textdatei generieren  
-- Automatische Modulinstallation (`QRCodeGenerator`)  
-- Zielordner wird automatisch erstellt  
-- Dateien werden fortlaufend nummeriert (`qrcode_1.png`, `qrcode_2.png`, …)  
-- Einfacher Funktionsaufruf – keine Adminrechte nötig  
-
----
-
 ## 📥 Installation
 
 1. **PowerShell 5.1 oder PowerShell 7+** installieren  
@@ -68,24 +58,6 @@ Get-QRCode -Path "C:\QRcodes" -PayloadFile ".\payload.txt"
 - `C:\QRcodes\qrcode_1.png` → `https://example.com`  
 - `C:\QRcodes\qrcode_2.png` → `Hallo Welt`  
 - `C:\QRcodes\qrcode_3.png` → `123-456-789`  
-
----
-
-## 💡 Hinweise
-
-- Internetverbindung nötig, falls Modul noch nicht installiert ist  
-- Modul wird im Scope `CurrentUser` installiert  
-- Leere Zeilen in der TXT-Datei werden ignoriert  
-- Dateien werden fortlaufend nummeriert  
-
----
-
-## 🛠 Weiterentwicklung
-
-- Pipeline-Support hinzufügen  
-- Dateiname aus Inhalt generieren  
-- Fortschrittsanzeige (`Write-Progress`)  
-- Logging und Verbose-Ausgaben  
 
 ---
 
