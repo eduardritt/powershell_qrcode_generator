@@ -91,5 +91,5 @@ Get-QRCode -Path "C:\QRcodes" -PayloadFile ".\payload.txt"
 
 ## 📄 Lizenz
 
-MIT License – siehe `LICENSE` Datei
+GPL v3 – siehe `LICENSE` Datei
 
